@@ -25,9 +25,9 @@ endif
 PATCH = patch -b -N
 UNZIP = unzip -q -o
 ifeq ($(MACOS),1)
-SED = /usr/local/bin/sed
+SED ?= /usr/local/bin/sed
 else
-SED = sed
+SED ?= sed
 endif
 
 VENDOR_SDK_ZIP = $(VENDOR_SDK_ZIP_$(VENDOR_SDK))

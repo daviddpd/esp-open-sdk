@@ -31,13 +31,20 @@ elif [ ${MACOS} = 1 ]; then
 fi
 
 
+if [ "$(echo "123 abc" | sed -r 's/[0-9]+/& &/')" = "123 123 abc" ];
+then
+	SED=$(which sed)
+	echo "Using sed from $SED"
+else
+	echo no
+fi
 
 
 # call make
 
-if [ ${FREEBSD} = 1 ]; then 
-	gmake STANDALONE=y FREEBSD=1
-elif [ ${MACOS} = 1 ]; then 
-	make STANDALONE=y MACOS=1
+if [ ${FREEBSD} = 1 ]; then
+	gmake STANDALONE=y FREEBSD=1 SED=$SED
+elif [ ${MACOS} = 1 ]; then
+	make STANDALONE=y MACOS=1 SED=$SED
 fi
 
