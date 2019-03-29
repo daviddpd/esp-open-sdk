@@ -18,7 +18,7 @@ esac
 if [ ${FREEBSD} = 1 ]; then 
 	sudo pkg install git autoconf automake bash bison bzip2 cloog expat flex gawk gcc gerf git gmp gperf gsed gpatch help2man isl libexpat libtool makeinfo mpc mpfr ncurses patch py27-serial sed texinfo textinfo unrar unzip wget
 elif [ ${MACOS} = 1 ]; then 
-	brew install autoconf automake binutils cloog expat gawk gettext gmp gnu-sed gperftools help2man isl libelf libiconv libtool mpc mpfr ncurses ppl unrar wget
+	brew install autoconf automake binutils cloog expat gawk gettext gmp gnu-sed gperftools gpatch help2man isl libelf libiconv libtool mpc mpfr ncurses ppl unrar wget
 fi
 
 
@@ -27,7 +27,7 @@ fi
 if [ ${FREEBSD} = 1 ]; then 
 	export PATH="$PATH:/usr/local/bin"
 elif [ ${MACOS} = 1 ]; then 
-	export PATH="$PATH:/usr/local/Cellar/binutils/2.31.1_2/bin:/usr/local/Cellar/ncurses/6.1/bin:/usr/local/Cellar/gpatch/2.7.6/bin"
+	export PATH="$PATH:/usr/local/Cellar/binutils/2.32/bin:/usr/local/Cellar/ncurses/6.1/bin:/usr/local/Cellar/gpatch/2.7.6/bin"
 fi
 
 
